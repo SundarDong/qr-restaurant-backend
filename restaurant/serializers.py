@@ -20,7 +20,7 @@ class TableSerializer(serializers.ModelSerializer):
         model = Table
         fields = ['id', 'table_number', 'qr_code', 'capacity', 'is_occupied']
 
-class OrderItemSerializer(serializers.ModelSeriazlizer):
+class OrderItemSerializer(serializers.ModelSerializer):
     menu_items_name = serializers.CharField(source='menu_items.name',read_only=True)
     subtotal= serializers.ReadOnlyField()
     class Meta:
